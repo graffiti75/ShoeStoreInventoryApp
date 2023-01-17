@@ -4,4 +4,9 @@
     <string name="enter_your_password">Enter your password</string>
     <string name="sign_in">Sign Up</string>
     <string name="sign_up">Sign In</string>
+    <string name="welcome">Welcome</string>
+    <string name="next_screen">Next Screen</string>
+    <string name="go_to_next_screen">Click into button below to go to the next screen</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
