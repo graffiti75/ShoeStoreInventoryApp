@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.graffiti75.shoestore.R
 import com.graffiti75.shoestore.databinding.FragmentInstructionBinding
+import com.graffiti75.shoestore.welcome.WelcomeFragmentDirections
 
 class InstructionFragment : Fragment() {
 
@@ -20,6 +22,7 @@ class InstructionFragment : Fragment() {
         )
 
         binding.shoeListButton.setOnClickListener {
+            findNavController().navigate(InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment())
         }
 
         return binding.root
