@@ -5,6 +5,7 @@
     <string name="sign_in">Sign Up</string>
     <string name="sign_up">Sign In</string>
     <string name="welcome">Welcome</string>
+    <string name="instructions">Instructions</string>
     <string name="next_screen">Next Screen</string>
     <string name="go_to_next_screen">Click into button below to go to the next screen</string>
     <!-- TODO: Remove or change this placeholder text -->

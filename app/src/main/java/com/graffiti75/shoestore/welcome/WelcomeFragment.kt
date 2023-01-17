@@ -4,8 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.graffiti75.shoestore.R
+import com.graffiti75.shoestore.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
 
@@ -13,7 +16,14 @@ class WelcomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_welcome, container, false)
+        val binding: FragmentWelcomeBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_welcome, container, false
+        )
+
+        binding.instructionsButton.setOnClickListener {
+            findNavController().navigate(WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment())
+        }
+
+        return binding.root
     }
 }
