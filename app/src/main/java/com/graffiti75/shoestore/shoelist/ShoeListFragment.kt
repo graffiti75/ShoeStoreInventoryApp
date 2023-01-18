@@ -23,13 +23,18 @@ class ShoeListFragment : Fragment() {
         )
 
         binding.fab.setOnClickListener {
-//            findNavController().navigate(ShoeListFragmentDirections.actionWelcomeFragmentToInstructionFragment())
-            Toast.makeText(requireActivity(), "---", Toast.LENGTH_LONG).show()
+            findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
 
         // The usage of an interface lets you inject your own implementation
         val menuHost: MenuHost = requireActivity()
         addMenu(menuHost)
+
+        val args = ShoeListFragmentArgs.fromBundle(requireArguments())
+        val name = args.name
+        val company = args.company
+        val size = args.size
+
         return binding.root
     }
 
