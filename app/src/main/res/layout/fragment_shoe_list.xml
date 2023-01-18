@@ -5,14 +5,22 @@
 
     <data></data>
 
+    <!-- FrameLayout was used here to enable the layout to have a -->
+    <!-- FloatingActionButton in the top stack of the ScrollView -->
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".shoelist.ShoeListFragment">
 
+        <!-- ScrollView is used here to enable the layout to be scrollable -->
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <!-- LinearLayout is used here to enable adding TextView's -->
+            <!-- to be added programatically on ShoeListFragment -->
 
             <LinearLayout
                 android:id="@+id/linear_layout"
