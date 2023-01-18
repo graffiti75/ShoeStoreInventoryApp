@@ -24,7 +24,6 @@ class ShoeDetailFragment : Fragment() {
         var name = ""
         var company = ""
         var size = -1
-
         binding.cancelButton.setOnClickListener {
             findNavController().navigate(
                 ShoeDetailFragmentDirections

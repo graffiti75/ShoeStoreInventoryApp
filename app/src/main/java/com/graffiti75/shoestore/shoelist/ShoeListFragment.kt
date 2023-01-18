@@ -19,7 +19,6 @@ import com.graffiti75.shoestore.databinding.FragmentShoeListBinding
 
 class ShoeListFragment : Fragment() {
 
-//    private lateinit var viewModel : ShoeListViewModel
     private val viewModel : ShoeListViewModel by activityViewModels()
 
     private lateinit var binding: FragmentShoeListBinding
@@ -36,14 +35,11 @@ class ShoeListFragment : Fragment() {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
 
-//        viewModel = ViewModelProvider(this)[ShoeListViewModel::class.java]
-
         // The usage of an interface lets you inject your own implementation
         val menuHost: MenuHost = requireActivity()
         addMenu(menuHost)
 
         addShoeToList()
-
         viewModel.shoeList.observe(viewLifecycleOwner) { list ->
             if (list != null)
                 addShoeToLinearLayout(list)
@@ -106,20 +102,4 @@ class ShoeListFragment : Fragment() {
             }
         }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
-
-    /*
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.winner_menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.logout -> {
-                findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
-     */
 }
