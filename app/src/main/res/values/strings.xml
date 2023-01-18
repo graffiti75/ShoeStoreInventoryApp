@@ -24,4 +24,5 @@
     <string name="shoe_description_hint">Enter a shoe description</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="shoe">Shoe</string>
 </resources>

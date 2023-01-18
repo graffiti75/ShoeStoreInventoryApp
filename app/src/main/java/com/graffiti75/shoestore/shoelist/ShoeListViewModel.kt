@@ -9,8 +9,10 @@ import com.graffiti75.shoestore.Shoe
 class ShoeListViewModel : ViewModel() {
 
     private var _shoeList = MutableLiveData<MutableList<Shoe>>()
-    val shoeList : LiveData<MutableList<Shoe>>
-        get() = _shoeList
+
+    private var _shoeString = MutableLiveData<String>()
+    val shoeString : LiveData<String>
+        get() = _shoeString
 
     init {
         Log.i("ShoeListViewModel", "initList()")
@@ -19,5 +21,9 @@ class ShoeListViewModel : ViewModel() {
 
     fun addShoeToList(shoe: Shoe) {
         _shoeList.value?.add(shoe)
+        var concatString = ""
+        for (shoe in _shoeList.value!!)
+            concatString += "$shoe\n"
+        _shoeString.value = concatString
     }
 }

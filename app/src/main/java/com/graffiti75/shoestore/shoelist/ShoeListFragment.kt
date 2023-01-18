@@ -3,9 +3,6 @@ package com.graffiti75.shoestore.shoelist
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.core.content.ContextCompat
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
@@ -31,6 +28,9 @@ class ShoeListFragment : Fragment() {
             inflater, R.layout.fragment_shoe_list, container, false
         )
 
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
         binding.fab.setOnClickListener {
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
@@ -38,34 +38,9 @@ class ShoeListFragment : Fragment() {
         // The usage of an interface lets you inject your own implementation
         val menuHost: MenuHost = requireActivity()
         addMenu(menuHost)
-
         addShoeToList()
-        viewModel.shoeList.observe(viewLifecycleOwner) { list ->
-            if (list != null)
-                addShoeToLinearLayout(list)
-        }
 
         return binding.root
-    }
-
-    private fun addShoeToLinearLayout(list: List<Shoe>) {
-        val layout = binding.linearLayout
-        val matchParent = LinearLayout.LayoutParams.MATCH_PARENT
-        val wrapContent = LinearLayout.LayoutParams.WRAP_CONTENT
-        Log.i("ShoeListFragment", "addShoeToLinearLayout() -> list: $list")
-        for (shoe in list) {
-            Log.i("ShoeListFragment", "--- addShoeToLinearLayout() -> shoe: $shoe")
-            val shoeToString = shoe.toString()
-            val textView = TextView(requireContext())
-            textView.layoutParams = LinearLayout.LayoutParams(matchParent, wrapContent)
-            textView.text = shoeToString
-            textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.black))
-
-            val scale = resources.displayMetrics.density
-            val dpAsPixels = (16 * scale + 0.5f).toInt()
-            textView.setPadding(dpAsPixels, dpAsPixels, dpAsPixels, dpAsPixels)
-            layout.addView(textView)
-        }
     }
 
     private fun addShoeToList() {

@@ -12,11 +12,7 @@
 
         <TextView
             android:id="@+id/shoe_name__text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            style="@style/ShoeDetailTextView"
             android:text="@string/shoe_name_label"
             app:layout_constraintEnd_toStartOf="@+id/shoe_name__edit_text"
             app:layout_constraintStart_toStartOf="@+id/shoe_company__text_view"
@@ -24,10 +20,7 @@
 
         <EditText
             android:id="@+id/shoe_name__edit_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
+            style="@style/ShoeDetailEditText"
             android:hint="@string/shoe_name_hint"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="@+id/shoe_name__text_view"
@@ -38,11 +31,7 @@
 
         <TextView
             android:id="@+id/shoe_company__text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            style="@style/ShoeDetailTextView"
             android:text="@string/shoe_company_label"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/shoe_company__edit_text"
@@ -52,10 +41,7 @@
 
         <EditText
             android:id="@+id/shoe_company__edit_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
+            style="@style/ShoeDetailEditText"
             android:hint="@string/shoe_company_hint"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toBottomOf="@+id/shoe_company__text_view"
@@ -67,11 +53,7 @@
 
         <TextView
             android:id="@+id/shoe_size__text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            style="@style/ShoeDetailTextView"
             android:text="@string/shoe_size_label"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/shoe_size__edit_text"
@@ -81,13 +63,10 @@
 
         <EditText
             android:id="@+id/shoe_size__edit_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
-            android:text="2"
+            style="@style/ShoeDetailEditText"
             android:hint="@string/shoe_size_hint"
             android:inputType="number"
+            android:text="2"
             app:layout_constraintBottom_toBottomOf="@+id/shoe_size__text_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.2"
@@ -97,11 +76,7 @@
 
         <TextView
             android:id="@+id/shoe_description__text_view"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
+            style="@style/ShoeDetailTextView"
             android:text="@string/shoe_description_label"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/shoe_description__edit_text"
@@ -111,10 +86,7 @@
 
         <EditText
             android:id="@+id/shoe_description__edit_text"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:ems="10"
+            style="@style/ShoeDetailEditText"
             android:hint="@string/shoe_description_hint"
             android:inputType="number"
             app:layout_constraintBottom_toBottomOf="@+id/shoe_description__text_view"

@@ -1,10 +1,9 @@
-package com.graffiti75.shoedetail
+package com.graffiti75.shoestore.shoedetail
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -26,8 +25,11 @@ class ShoeDetailFragment : Fragment() {
         var size = -1
         binding.cancelButton.setOnClickListener {
             findNavController().navigate(
-                ShoeDetailFragmentDirections
-                    .actionShoeDetailFragmentToShoeListFragment(name, company, size.toString().toInt())
+                ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment(
+                    name,
+                    company,
+                    size.toString().toInt()
+                )
             )
         }
 
@@ -36,8 +38,11 @@ class ShoeDetailFragment : Fragment() {
             company = binding.shoeCompanyEditText.text.toString()
             size = binding.shoeSizeEditText.text.toString().toInt()
             findNavController().navigate(
-                ShoeDetailFragmentDirections
-                    .actionShoeDetailFragmentToShoeListFragment(name, company, size)
+                ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment(
+                    name,
+                    company,
+                    size
+                )
             )
         }
 

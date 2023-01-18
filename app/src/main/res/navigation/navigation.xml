@@ -56,7 +56,7 @@
     </fragment>
     <fragment
         android:id="@+id/shoeDetailFragment"
-        android:name="com.graffiti75.shoedetail.ShoeDetailFragment"
+        android:name="com.graffiti75.shoestore.shoedetail.ShoeDetailFragment"
         android:label="ShoeDetailFragment"
         tools:layout="@layout/fragment_shoe_detail">
         <action

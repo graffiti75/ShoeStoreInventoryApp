@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.graffiti75.shoestore.shoelist.ShoeListViewModel" />
+    </data>
 
     <!-- FrameLayout was used here to enable the layout to have a -->
     <!-- FloatingActionButton in the top stack of the ScrollView -->
@@ -26,7 +31,17 @@
                 android:id="@+id/linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/shoe__text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@{viewModel.shoeString}"
+                    android:textSize="20sp"
+                    tools:text="@string/shoe" />
+            </LinearLayout>
         </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
