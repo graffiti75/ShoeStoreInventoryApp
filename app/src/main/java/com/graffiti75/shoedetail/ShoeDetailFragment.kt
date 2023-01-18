@@ -26,22 +26,20 @@ class ShoeDetailFragment : Fragment() {
         var size = -1
 
         binding.cancelButton.setOnClickListener {
-            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment(
-                name,
-                company,
-                size.toString().toInt()
-            ))
+            findNavController().navigate(
+                ShoeDetailFragmentDirections
+                    .actionShoeDetailFragmentToShoeListFragment(name, company, size.toString().toInt())
+            )
         }
 
         binding.saveButton.setOnClickListener {
             name = binding.shoeNameEditText.text.toString()
             company = binding.shoeCompanyEditText.text.toString()
             size = binding.shoeSizeEditText.text.toString().toInt()
-            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment(
-                name,
-                company,
-                size
-            ))
+            findNavController().navigate(
+                ShoeDetailFragmentDirections
+                    .actionShoeDetailFragmentToShoeListFragment(name, company, size)
+            )
         }
 
         return binding.root
